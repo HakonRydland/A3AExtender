@@ -3,23 +3,25 @@ param (
     [string]$metaFileName = "meta.cpp"
 )
 
+$addonName = "A3AExtender"
+
 "Meta file name: $metaFileName`n`n"
 Push-Location
 
-Set-Location "$PSScriptRoot\..\..\A3A"
+Set-Location "$PSScriptRoot\..\..\$addonName"
 
 "Setup temporary directories..."
 if (Test-Path "..\build") {
     Remove-Item -Path "..\build" -Recurse -Force
 }
 New-Item -Path "..\build" -ItemType Directory -Force > $null
-New-Item -Path "..\build\A3A" -ItemType Directory -Force > $null
-New-Item -Path "..\build\A3A\addons" -ItemType Directory -Force > $null
-New-Item -Path "..\build\A3A\Keys" -ItemType Directory -Force > $null
+New-Item -Path "..\build\$addonName" -ItemType Directory -Force > $null
+New-Item -Path "..\build\$addonName\addons" -ItemType Directory -Force > $null
+New-Item -Path "..\build\$addonName\Keys" -ItemType Directory -Force > $null
 
 $buildLocation = "$PSScriptRoot\..\..\build"
 $addonLocation = "." # We are here already
-$addonOutLocation = "$PSScriptRoot\..\..\build\A3A"
+$addonOutLocation = "$PSScriptRoot\..\..\build\$addonName"
 $addonsOutLocation = "$addonOutLocation\addons"
 
 "`nBuild addons..."
@@ -44,25 +46,6 @@ Push-Location
 Set-Location $addonOutLocation
 Rename-Item $metaFileName "meta.cpp"
 Pop-Location
-
-"`nCreate key..."
-Push-Location
-Set-Location "$PSScriptRoot\..\..\build"
-
-.$PSScriptRoot\..\DSSignFile\DSCreateKey "Antistasi"
-Copy-Item "Antistasi.bikey" "$addonOutLocation\Keys\Antistasi.bikey" -Force
-
-"`nSign PBO files..."
-Push-Location
-Set-Location $addonsOutLocation
-$pboFiles = Get-ChildItem -Path $addonsOutLocation -Name "*.pbo"
-forEach ($file in $pboFiles) {
-    "Signing file $file ..."
-    .$PSScriptRoot\..\DSSignFile\DSSignFile "..\..\Antistasi.biprivatekey" $file
-}
-
-Remove-Item "..\..\Antistasi.biprivatekey"
-Remove-Item "..\..\Antistasi.bikey"
 
 Pop-Location
 
