@@ -3,7 +3,7 @@ param (
     [string]$metaFileName = "meta.cpp"
 )
 
-$addonName = "A3AExtender"
+$addonName = "A3AE"
 
 "Meta file name: $metaFileName`n`n"
 Push-Location

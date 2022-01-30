@@ -14,7 +14,7 @@ This is an example of how you could extend or overwrite antistasi with new featu
 
 # Building the mod
 To build the mod you first need to navigate to Tools\Builder and edit buildAddons.ps1
-on line 6 replace `$addonName = "A3AExtender"` with `$addonName = "${your addons main folder name}"`  
+on line 6 replace `$addonName = "A3AE"` with `$addonName = "${your addons main folder name}"`  
 so if you name your extension A3A-AltisRemade then the line would be `$addonName = "A3A-AltisRemade"`  
 save the file and close it.  
 Now all you need to do is run the script and it will build the mod for you  
