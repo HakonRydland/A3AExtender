@@ -8,7 +8,7 @@ class Templates
         priorityCiv = 1; //highest is favored when auto picking
 
         requiredAddons[] = {}; //the cfgPatches class of the mod these templates are depending on
-        path = QPATHTOFOLDER(Templates\Templates\Vanilla); //the path to the template folder
+        path = QPATHTOFOLDER(Templates\Vanilla); //the path to the template folder
 
         //Type class: AI, Reb, Civ
         class AI

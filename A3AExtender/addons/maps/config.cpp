@@ -21,7 +21,7 @@ class CfgMissions
         class Antistasi_Altis
         {
             briefingName = $STR_A3AE_maps_Altis_mapname;
-            directory = "x\A3AExtender\addons\maps\Antistasi_Altis.Altis";
+            directory = "x\A3AE\addons\maps\Antistasi_Altis.Altis";
         };
     };
 };

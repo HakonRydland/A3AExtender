@@ -1,5 +1,5 @@
 #define MAINPREFIX x
-#define MODFOLDER A3AExtender
+#define MODFOLDER A3AE
 #ifndef PREFIX
     #define PREFIX A3AE
 #endif
