@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3AExtender">
+  <Package name="A3AExtender">
+    <Container name="credits_generic">
+      <Key ID="STR_A3AE_credits_generic_author">
+        <Original>The Official Antistasi Community and Barbolani</Original>
+      </Key>
+    </Container>
+    <Container name="mission_info">
+    <!--> Example of mission info:
+        String uses in description.exe:
+        briefingName = $STR_A3AE_maps_${worldname}_mapname;
+        OnLoadName = $STR_A3AE_maps_${worldname}_mapname_short;
+        OnLoadMission = $STR_A3AE_maps_${worldname}_loadText;
+        overviewText = $STR_A3AE_maps_${worldname}_description;
+
+        $STR_A3AE_maps_${worldname}_mapname is used for config.cpp CfgMissions entry for the world and mission.sqm briefingName entry
+        cfgPaths:
+            CfgMissions >> MPMissions >> Antistasi_${worldname} >> briefingName
+            Mission >> Intel >> briefingName
+
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        <Key ID="STR_A3AE_maps_${worldname}_mapname_short">
+        <Original>Antistasi Altis</Original>
+      </Key>
+      <Key ID="STR_A3AE_maps_${worldname}_mapname">
+        <Original>Antistasi - Liberation of Altis</Original>
+      </Key>
+      <Key ID="STR_A3AE_maps_${worldname}_description">
+        <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
+      </Key>
+      <Key ID="STR_A3AE_maps_${worldname}_loadText">
+        <Original>Because nothing is more important than Freedom.</Original>
+      </Key>
+    //////////////////////////////////////////////////////////////////////////////////
+    </-->
+      <Key ID="STR_A3AE_maps_Altis_mapname_short">
+        <Original>Antistasi Altis Extender</Original>
+      </Key>
+      <Key ID="STR_A3AE_maps_Altis_mapname">
+        <Original>Antistasi - Liberation of Altis Extender</Original>
+      </Key>
+      <Key ID="STR_A3AE_maps_Altis_description">
+        <Original>Fuck some shit up</Original>
+      </Key>
+      <Key ID="STR_A3AE_maps_Altis_loadText">
+        <Original>Because nothing is more important than fun.</Original>
+      </Key>
+    </Container>
+  </Package>
+</Project>
