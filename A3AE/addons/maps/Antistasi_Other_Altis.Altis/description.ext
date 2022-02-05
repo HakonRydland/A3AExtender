@@ -1,4 +1,14 @@
+// prevents definition of A3A class in master.hpp, allowing us to add custom data to the missionConfig class A3A here
+#define CUSTOM_A3A_CLASS
 #include "..\missionDescription\master.hpp"
+
+class A3A { //this overwrites the navgrid for this specific mission
+#define true 1
+#define false 0
+    #include "navGrid.hpp"
+#undef true
+#undef false
+};
 
 briefingName = $STR_A3AE_maps_Other_Altis_mapname;
 OnLoadName = $STR_A3AE_maps_Other_Altis_mapname_short;

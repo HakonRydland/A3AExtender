@@ -14,6 +14,11 @@ class CfgPatches {
     };
 };
 
+class A3A { //global overwrite or inclussion of new navGrids or map info
+    #include "mapInfoGlobal.hpp"
+    #include "NavGrid.hpp"
+};
+
 class CfgMissions
 {
     class MPMissions
