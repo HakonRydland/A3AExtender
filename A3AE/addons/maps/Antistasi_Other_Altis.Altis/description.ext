@@ -3,12 +3,9 @@
 #include "..\missionDescription\master.hpp"
 
 class A3A { //this overwrites the navgrid for this specific mission
-//the define's and undef's are neccesarry, do not remove!!!
-#define true 1
-#define false 0
-    #include "navGrid.hpp"
-#undef true
-#undef false
+    class Navgrid {
+        Altis = QPATHTOFOLDER(Antistasi_Other_Altis.Altis\navGrid.sqf);
+    };
 };
 
 briefingName = $STR_A3AE_maps_Other_Altis_mapname;

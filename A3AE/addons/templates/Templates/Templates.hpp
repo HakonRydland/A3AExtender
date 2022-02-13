@@ -4,7 +4,7 @@ class Templates
     {
         class AI
         {
-            class CSAT2 { // compleatly new template
+            class CSAT2 { // completely new template
                 file = QPATHTOFOLDER(Templates\Vanilla\Vanilla_AI_CSAT2);
             };
 

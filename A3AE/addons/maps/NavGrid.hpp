@@ -1,8 +1,3 @@
-//config needs binary true/false
-#define true 1
-#define false 0
-class NavGrid { //overwrite global navgrids of antistasi
-    #include "Antistasi_Altis.Altis\navGrid.hpp"
+class NavGrid { //overwrite for global
+    Altis = QPATHTOFOLDER(Antistasi_Altis.Altis\navGrid.sqf);
 };
-#undef true
-#undef false
