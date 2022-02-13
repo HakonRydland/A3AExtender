@@ -1,5 +1,5 @@
 # Antistasi Extender Example
-This is an example of how you could extend or overwrite antistasi with new features, maps, templates.
+This is an example of how you could extend or overwrite antistasi with new maps, templates
 
 # Important things to modify
 - Under addons/core/Includes you need to adapt `script_mod.hpp` to have a unique `PREFIX` and `MODFOLDER`.
