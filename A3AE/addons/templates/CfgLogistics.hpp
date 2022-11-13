@@ -1,3 +1,4 @@
+//redefine the addon macro so we can use a3a tools for nodes and cargo
 #ifdef ADDON
 #undef ADDON
 #endif
@@ -11,3 +12,7 @@ class DOUBLES(ADDON,Cargo) {
     class TRIPLES(ADDON,Cargo,Base); //import base class from antistasi
     #include "Logistics\ModNameCargo.hpp" //include the cargo from the different mods here
 };
+
+//redefine the proper addon macro
+#undef ADDON
+#define ADDON DOUBLES(PREFIX,COMPONENT)
