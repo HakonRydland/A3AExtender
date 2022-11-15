@@ -3,6 +3,7 @@
 #include "..\missionDescription\master.hpp"
 
 class A3A { //this overwrites the navgrid for this specific mission
+    version[] = {3,0,0}; //required for version matching mission to code base
     class Navgrid {
         Altis = QPATHTOFOLDER(Antistasi_Other_Altis.Altis\navGrid.sqf);
     };
