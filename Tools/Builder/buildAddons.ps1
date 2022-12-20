@@ -2,7 +2,7 @@ param (
     [string]$modFileName = "mod.cpp",
     [string]$metaFileName = "meta.cpp"
 )
-
+#replace this with the modfolder name
 $addonName = "A3AE"
 
 "Meta file name: $metaFileName`n`n"
@@ -19,7 +19,6 @@ New-Item -Path "..\build\$addonName" -ItemType Directory -Force > $null
 New-Item -Path "..\build\$addonName\addons" -ItemType Directory -Force > $null
 New-Item -Path "..\build\$addonName\Keys" -ItemType Directory -Force > $null
 
-$buildLocation = "$PSScriptRoot\..\..\build"
 $addonLocation = "." # We are here already
 $addonOutLocation = "$PSScriptRoot\..\..\build\$addonName"
 $addonsOutLocation = "$addonOutLocation\addons"
@@ -30,7 +29,7 @@ foreach ($module in $modules) {
     $pboName = "$($module.Name).pbo"
     #"Building $pboName...  $addonLocation\addons\$($module.Name)   -> $addonsOutLocation\$pboName"
     "Building $pboName ..."
-    .$PSScriptRoot\hemtt armake build --force -i include  $module.fullName "$addonsOutLocation\$pboName" -w unquoted-string -w redefinition-wo-undef -w excessive-concatenation
+    .$PSScriptRoot\hemtt armake pack --force $module.fullName "$addonsOutLocation\$pboName"
 }
 
 "`nCopy mod.cpp..."
@@ -52,3 +51,6 @@ Pop-Location
 Pop-Location
 
 Pop-Location
+
+$displayTime = Get-Date -DisplayHint DateTime
+"Antistasi builder ran at: $displayTime"
