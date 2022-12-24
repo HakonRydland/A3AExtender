@@ -1,20 +1,15 @@
 #include "..\missionDescription\master.hpp"
 
-briefingName = $STR_A3AE_maps_Altis_mapname;
-OnLoadName = $STR_A3AE_maps_Altis_mapname_short;
-OnLoadMission = $STR_A3AE_maps_Altis_loadText;
-overviewText = $STR_A3AE_maps_Altis_description;
+OnLoadName = $STR_antistasi_mission_info_Altis_mapname_short_text;
+OnLoadMission = $STR_antistasi_mission_info_Altis_blurb_text;
+briefingName = $STR_antistasi_mission_info_Altis_mapname_text;
+overviewText = $STR_antistasi_mission_info_Altis_description_text;
 loadScreen = "Pictures\Mission\pic.jpg"; // NB, this will resolve from root
 overviewPicture = "Pictures\Mission\pic.jpg"; // NB, this will resolve from root
 
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"
-};
-
-class CfgSounds
-{
-    #include "..\missionDescription\CfgSoundsContents.hpp"
 };
 
 class CfgDebriefing {

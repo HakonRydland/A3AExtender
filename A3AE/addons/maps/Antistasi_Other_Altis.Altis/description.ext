@@ -1,29 +1,15 @@
-// prevents definition of A3A class in master.hpp, allowing us to add custom data to the missionConfig class A3A here
-#define CUSTOM_A3A_CLASS
 #include "..\missionDescription\master.hpp"
 
-class A3A { //this overwrites the navgrid for this specific mission
-    version[] = {3,0,0}; //required for version matching mission to code base
-    class Navgrid {
-        Altis = QPATHTOFOLDER(Antistasi_Other_Altis.Altis\navGrid.sqf);
-    };
-};
-
-briefingName = $STR_A3AE_maps_Other_Altis_mapname;
-OnLoadName = $STR_A3AE_maps_Other_Altis_mapname_short;
-OnLoadMission = $STR_A3AE_maps_Other_Altis_loadText;
-overviewText = $STR_A3AE_maps_Other_Altis_description;
+OnLoadName = $STR_antistasi_mission_info_Altis_mapname_short_text;
+OnLoadMission = $STR_antistasi_mission_info_Altis_blurb_text;
+briefingName = $STR_antistasi_mission_info_Altis_mapname_text;
+overviewText = $STR_antistasi_mission_info_Altis_description_text;
 loadScreen = "Pictures\Mission\pic.jpg"; // NB, this will resolve from root
 overviewPicture = "Pictures\Mission\pic.jpg"; // NB, this will resolve from root
 
 class CfgNotifications
 {
     #include "..\missionDescription\CfgNotificationsContents.hpp"
-};
-
-class CfgSounds
-{
-    #include "..\missionDescription\CfgSoundsContents.hpp"
 };
 
 class CfgDebriefing {
