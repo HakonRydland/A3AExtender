@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3AE_core"};
+        requiredAddons[] = {QDOUBLES(PREFIX,core)};
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
