@@ -1,4 +1,5 @@
 "`n`nWelcome to the A3A Extender first time setup!`n=================================================`n`n"
+"Mod naming should follow these restrictions: [A-Z] [0-9] [_]`nit should also be all lowercase to maintain better compatibility with linux servers`nExample: a3ae_my_faction`n`n"
 $exstensionName = Read-Host "Enter your exstension name"
 
 #find witch folder is the modfolder
