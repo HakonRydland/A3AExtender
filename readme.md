@@ -43,6 +43,8 @@ Now that you have added the content/functionality you wanted its time to release
 You should first make sure that any example content not being used is removed, you can do so either carefully by removing lines from the configs, or by removing a addon folder compleatly
   * **Note that you can not remove the `core` addon**
 
+Next update the mod.cpp and meta.cpp files to contain the correct information for you. (for steam release you can delete the meta.cpp from the buid folder afterwards)
+
 Now simply run the `Build` script in the root folder to build it and use the arma tools for signing and publishing the exstension
 *(note: it will not sign it for you, this needs to be done manually before publishing with `Arma 3 Tools` -> `DSUtils` & `Publisher`)*.
 You can also distribute it in other ways other than the steam workshop simply by sending the build output to the users
