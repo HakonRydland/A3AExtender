@@ -25,13 +25,13 @@ class CfgMissions
     {
         class Antistasi_Altis
         {
-            briefingName = $STR_A3AE_maps_Altis_mapname;
-            directory = "x\A3AE\addons\maps\Antistasi_Altis.Altis";
+            briefingName = LSTRING(Altis_mapname);
+            directory = QPATHTOFOLDER(Antistasi_Altis.Altis);
         };
         class Antistasi_Other_Altis
         {
-            briefingName = $STR_A3AE_maps_Other_Altis_mapname;
-            directory = "x\A3AE\addons\maps\Antistasi_Other_Altis.Altis";
+            briefingName = LSTRING(Other_Altis_mapname);
+            directory = QPATHTOFOLDER(Antistasi_Other_Altis.Altis);
         };
     };
 };

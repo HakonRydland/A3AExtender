@@ -8,14 +8,14 @@ foreach ($folder in $folders) {
     $subFolders = Get-Childitem "$PSScriptRoot\..\..\$folderName" -Directory
     $subFolders = $subFolders | Where-Object { $_.Name -eq "addons" }
     if (($subFolders | Measure-Object).Count -gt 0) {
-        $addonName = $folderName
+        $oldExstensionName = $folderName
         break
     }
 }
 
 "`nRenaming mod folder"
 Set-Location "$PSScriptRoot\..\.."
-Rename-Item $addonName $exstensionName
+Rename-Item $oldExstensionName $exstensionName
 
 "`nPreping mod for building"
 Set-Location "$PSScriptRoot\..\..\$exstensionName"
@@ -44,10 +44,13 @@ forEach ($addon in (Get-Childitem ".\addons" -Directory)) {
     }
     Set-Content $file -NoNewline "x\$exstensionName\addons\$addonName"
 
+    # Updating stringtable
+    $file = ".\addons\$addonName\Stringtable.xml"
+    if (Test-Path $file) {
+        $newContent = (Get-Content -path $file -Raw) -replace "STR_$oldExstensionName", "STR_$exstensionName" -replace "A3AExtender", $exstensionName
+        Set-Content $file $newContent
+    }
 
-
-    # #define COMPONENT maps
-    # #include "\x\A3AE\addons\core\Includes\script_mod.hpp"
     "Createing script_component for $addonName"
     $file = ".\addons\$addonName\script_component.hpp"
     if ($addonName -eq "core") { continue } #core has unique script_component
@@ -56,6 +59,7 @@ forEach ($addon in (Get-Childitem ".\addons" -Directory)) {
     }
     Set-Content $file "#define COMPONENT $addonName
 #include `"\x\$exstensionName\addons\core\Includes\script_mod.hpp`""
+
 }
 
 "`n`nMod preped for building`n=================================================`n"
