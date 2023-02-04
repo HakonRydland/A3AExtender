@@ -1,8 +1,5 @@
 #define MAINPREFIX x
-#define MODFOLDER A3AE
-#ifndef PREFIX
-    #define PREFIX A3AE
-#endif
+#include "mod_name.hpp"
 
 #include "common.inc"
 

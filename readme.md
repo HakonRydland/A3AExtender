@@ -1,17 +1,14 @@
 # Antistasi Extender Example
 This is an example of how you could extend or overwrite antistasi with new maps, templates
 
-# Important things to modify
-- Under addons/core/Includes you need to adapt `script_mod.hpp` to have a unique `PREFIX` and `MODFOLDER`.
-- Under all addons **EXCEPT** core you need to update script_component.hpp to have updateded path to match the `MODFOLDER` define in `script_mod.hpp`.
-```sqf
-#include "\x\${MODFOLDER}\addons\core\Includes\script_mod.hpp"
-```
-- Next you need to update all `$PBOPREFIX$` with the new path `x\${MODFOLDER}\addons\${COMPONENT}`.
+# How to get started
+- under `Tools\Builder` run the PowerShell script called `firstTimeSetup`
+  This will rename and prepare your mod for being built
+- Run the `buildAddons` and move the output from the build folder in the top folder to your ArmA 3 game directory.
+- Start the launcher and load the mods: `Antistasi the Mod` and, `your exstension mod`
+- start the game and confirm that the new template and/or map is loaded
+- start adding the templates/maps/functionality that you want
 
-  All *${Something}* should be replaced with their corresponding elements.
-
-*Example: If MODFOLDER is `A3AE` you would replace all ${MODFOLDER} with A3AE*.
 
 # Example additions
 ## Maps
@@ -34,12 +31,18 @@ Antistasi now supports 3rd party template additions/overwrites.
 
   Again it's important to read through all the files in the `templates` addon to not miss important steps.
 
-# Building the mod
-To build the mod you first need to navigate to `Tools\Builder` and edit `buildAddons.ps1`.
+## Functionality
+- Antistasi now have events that you can listen to and exstend exsisting functionality.
+  A list of all events and their parametes can be found in the in game config under: `A3A >> Events`
+- In addition you can overwrite any of Antistasi functions to add change or remove functionality, this includes full systems (be aware that this is more complex and can break on updates)
+  To do so simply add a function to the `A3A` class of `CfgFunctions.hpp` under the addon functions (you can also replicate the config.cpp to allow this in any other addon)
 
-  On line 6 replace `$addonName = "A3AE"` with `$addonName = "${your addons main folder name}"`,
-so if you name your extension A3A-AltisRemade then the line would be `$addonName = "A3A-AltisRemade"`,
-save the file and close it.
+# Releasing your exstension
+Now that you have added the content/functionality you wanted its time to release the exstension.
 
-  Now all you need to do is run the script and it will build the mod for you
+You should first make sure that any example content not being used is removed, you can do so either carefully by removing lines from the configs, or by removing a addon folder compleatly
+  * **Note that you can not remove the `core` addon**
+
+Now simply run the `Build` script in the root folder to build it and use the arma tools for signing and publishing the exstension
 *(note: it will not sign it for you, this needs to be done manually before publishing with `Arma 3 Tools` -> `DSUtils` & `Publisher`)*.
+You can also distribute it in other ways other than the steam workshop simply by sending the build output to the users
