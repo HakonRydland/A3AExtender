@@ -26,12 +26,12 @@ class CfgMissions
         class Antistasi_Altis
         {
             briefingName = CSTRING(Altis_mapname);
-            directory = QPATHTOFOLDER(Antistasi_Altis.Altis);
+            directory = QCPATHTO(Antistasi_Altis.Altis);
         };
         class Antistasi_Other_Altis
         {
             briefingName = CSTRING(Other_Altis_mapname);
-            directory = QPATHTOFOLDER(Antistasi_Other_Altis.Altis);
+            directory = QCPATHTO(Antistasi_Other_Altis.Altis);
         };
     };
 };
