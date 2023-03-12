@@ -2,9 +2,8 @@
 This is an example of how you could extend or overwrite antistasi with new maps, templates
 
 # How to get started
-- under `Tools\Builder` run the PowerShell script called `firstTimeSetup`
-  This will rename and prepare your mod for being built
-- Run the `buildAddons` and move the output from the build folder in the top folder to your ArmA 3 game directory.
+- run the `Install.ps1` script and follow the instructions
+- Run the `Build.ps1` script and move the output from the `build` folder in the top folder to your ArmA 3 game directory.
 - Start the launcher and load the mods: `Antistasi the Mod` and, `your exstension mod`
 - start the game and confirm that the new template and/or map is loaded
 - start adding the templates/maps/functionality that you want
@@ -18,14 +17,14 @@ There are two examples added for working with maps. Adding a new map and overwri
 
   In this examples there are also demonstrations of mission specific overwrites of `mapInfo` and `navGrid` data as well as global overwrite/addition.
 
-  You will find all the information regarding this under `A3AE/addons/maps`.
+  You will find all the information regarding this under `your exstension mod/addons/maps`.
 
   Take care to study all the files in the addon to not miss crucial porting steps.
 
 ## Templates
 Antistasi now supports 3rd party template additions/overwrites.
 
-  To add new templates or overwrite existing ones follow the demonstration given in `A3AE/addons/templates/Templates/Templates.hpp`.
+  To add new templates or overwrite existing ones follow the demonstration given in `your exstension mod/addons/templates/Templates/Templates.hpp`.
 
   Note that while you can add addon vehicle templates to Antistasi at this time, it should be noted that it is still a limited system and you shouldn't expect full functionality from them atm.
 
