@@ -146,7 +146,7 @@ class Mission
 {
 	class Intel
 	{
-        briefingName=$STR_antistasi_mission_info_Altis_mapname_text;
+        briefingName=$STR_A3AE_maps_Altis_mapname;
 		resistanceWest=0;
 		startWind=0.1;
 		forecastWind=0.1;
