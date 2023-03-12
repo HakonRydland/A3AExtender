@@ -47,7 +47,7 @@ forEach ($addon in (Get-Childitem ".\addons" -Directory)) {
 
     # Updating stringtable
     $file = ".\addons\$addonName\Stringtable.xml"
-    if (Test-Path $file) {
+    if (false and Test-Path $file) { # disabled as this would require renaming each string reference aswell to work properly, not worth the effort
         $newContent = (Get-Content -path $file -Raw) -replace "STR_$oldExstensionName", "STR_$exstensionName" -replace "A3AExtender", $exstensionName
         Set-Content $file $newContent
     }
