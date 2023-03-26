@@ -26,12 +26,12 @@ class CfgMissions
         class Antistasi_Altis
         {
             briefingName = $STR_A3AE_maps_Altis_mapname;
-            directory = "x\A3AE\addons\maps\Antistasi_Altis.Altis";
+            directory = QCPATHTO(Antistasi_Altis.Altis);
         };
         class Antistasi_Other_Altis
         {
             briefingName = $STR_A3AE_maps_Other_Altis_mapname;
-            directory = "x\A3AE\addons\maps\Antistasi_Other_Altis.Altis";
+            directory = QCPATHTO(Antistasi_Other_Altis.Altis);
         };
     };
 };

@@ -2,15 +2,27 @@ param (
     [string]$modFileName = "mod.cpp",
     [string]$metaFileName = "meta.cpp"
 )
+
+#find witch folder is the modfolder
+$folders = Get-Childitem "$PSScriptRoot\..\.." -Directory
+foreach ($folder in $folders) {
+    $folderName = $folder.Name
+    $subFolders = Get-Childitem "$PSScriptRoot\..\..\$folderName" -Directory
+    $subFolders = $subFolders | Where-Object { $_.Name -eq "addons" }
+    if (($subFolders | Measure-Object).Count -gt 0) {
+        $addonName = $folderName
+        break
+    }
+}
+
 #replace this with the modfolder name
-$addonName = "A3AE"
-
+#$addonName = "A3AE" # this is automated in the code block above
 "Meta file name: $metaFileName`n`n"
-Push-Location
 
+Push-Location
 Set-Location "$PSScriptRoot\..\..\$addonName"
 
-"Setup temporary directories..."
+"`n`nSetup temporary directories..."
 if (Test-Path "..\build") {
     Remove-Item -Path "..\build" -Recurse -Force
 }
