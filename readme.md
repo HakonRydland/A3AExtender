@@ -2,11 +2,23 @@
 This is an example of how you could extend or overwrite antistasi with new maps, templates
 
 # How to get started
-- run the `Install.ps1` script and follow the instructions
-- Run the `Build.ps1` script and move the output from the `build` folder in the top folder to your ArmA 3 game directory.
-- Start the launcher and load the mods: `Antistasi the Mod` and, `your exstension mod`
-- start the game and confirm that the new template and/or map is loaded
-- start adding the templates/maps/functionality that you want
+- run the `Install.ps1` script and follow the instructions on screen
+- Run the `Build.ps1` script this will create a folder in the root folder called build and compile your extension into it.
+- Start the launcher and in the launcher to the following:
+  1) Under `Mods` -> `...More` select `add watched folder...` then `add custom folder...`
+      Navigate to your extensions root folder and select the newly created build folder
+      if successfull it will have added that folder in the list of watched folders and a green box would have shown
+      stating that a mod has been installed
+      
+  2) Load `Antistasi - The Mod` and the newly installed `A3 Antistasi Extender example` mods
+  3) Start the game and confirm that the new template and/or map is loaded by starting a local host sesion under multiplayer
+      and confirming that the new map and overwritten map is there, then start a game of antistasi and confirm that the
+      new and overwritten templates are there (these are the example maps and templates provided with the extender)
+      
+  Assuming everything went well you are now ready to make your own modifications
+  Remember to remove unused content and reed thouroughly throug the filles while making any eddits
+  As a hint all content is added from the config.cpp files located within each of the addons
+  so you can follow that down to the files that govern the different parts like templates and maps etc.
 
 
 # Example additions
@@ -42,7 +54,7 @@ Now that you have added the content/functionality you wanted its time to release
 You should first make sure that any example content not being used is removed, you can do so either carefully by removing lines from the configs, or by removing a addon folder compleatly
   * **Note that you can not remove the `core` addon**
 
-Next update the mod.cpp and meta.cpp files to contain the correct information for you. (for steam release you can delete the meta.cpp from the buid folder afterwards)
+Next update the mod.cpp and meta.cpp files to contain the correct information for you. (for steam release you can delete the meta.cpp from the build folder afterwards)
 
 Now simply run the `Build` script in the root folder to build it and use the arma tools for signing and publishing the exstension
 *(note: it will not sign it for you, this needs to be done manually before publishing with `Arma 3 Tools` -> `DSUtils` & `Publisher`)*.
