@@ -1,6 +1,12 @@
 # Antistasi Extender Example
 This is an example of how you could extend or overwrite antistasi with new maps, templates
 
+# Requirements
+  - Arma 3
+  - Arma 3 tools  
+    
+  Both needs to be run once from steam
+
 # How to get started
 - run the `Install.ps1` script and follow the instructions on screen
 - Run the `Build.ps1` script this will create a folder in the root folder called build and compile your extension into it.
